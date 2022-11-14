@@ -14,9 +14,10 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 	<script type="text/javascript">
-		$(document).ready(function({
-			<c:if test="${!msg}">
+		$(document).ready(function(){
+			<c:if test="${!empty msg}">
 				alert("${msg}");
+				<c:remove var="msg" scope="session"/>
 			</c:if>
 		});
 		function deleteFn(num){
@@ -41,6 +42,7 @@
   <h2>회원관리 시스템</h2>
   <div class="panel panel-default">
     <div class="panel-heading">
+    <c:if test="${sessionScope.userId==null || sessionScope.userId==''}">
 	 <form class="form-inline" action="${ctx}/memberLogin.do" method="post">
 	  <div class="form-group">
 	    <label for="user_id">ID:</label>
@@ -52,6 +54,11 @@
 	  </div>
 	  <button type="submit" class="btn btn-default" onclick="return check()">로그인</button>
 	 </form>
+	 </c:if>
+	 <c:if test="${sessionScope.userId!=null && sessionScope.userId!=''}">
+		 ${sessionScope.userName}님. 환영합니다:)
+		 <button type="button" class="btn btn-warning">로그아웃</button>
+	</c:if>
     </div>
     <div class="panel-body">
 		<div class="table-responsive">          
@@ -78,7 +85,13 @@
 						<td>${vo.age}</td>
 						<td>${vo.email}</td>
 						<td>${vo.phone}</td>
-						<td><input type="button" value="삭제" onclick="deleteFn(${vo.num })" ></td>
+						
+						<c:if test="${sessionScope.userId==vo.id }">
+						<td><input type="button" value="삭제" onclick="deleteFn(${vo.num })"  ></td>
+						</c:if>
+						<c:if test="${sessionScope.userId!=vo.id }">
+						<td><input type="button" value="삭제" onclick="deleteFn(${vo.num })" disabled="disabled" ></td>
+						</c:if>
 					</tr>
 				</c:forEach>
 				<tr>
