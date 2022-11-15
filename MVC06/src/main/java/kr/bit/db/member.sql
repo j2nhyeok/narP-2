@@ -16,7 +16,7 @@ select * from member;
 
 
 -- insert (저장)
-insert into member(id, pass,name, age, email, phone) values('admin', 'admin', '관리자', 40,  'chlwlsgur@naver.com', '010-1234-5678');
+insert into member(id, pass,name, age, email, phone) values('3', '3', '관리자', 40,  'chlwlsgur@naver.com', '010-1234-5678');
 
 -- update (수정)
 update member set age = 45, ph one = '010-1111-0000' where id = 'admin';
