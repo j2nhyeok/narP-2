@@ -96,7 +96,7 @@
 					</c:if> 
 				</c:if> 
 				<input type="button" value="취소" class='btn btn-warning' onclick="frmreset()"/> 
-				<input type="button" value="리스트" onclick="location.href='${ctx}/memberList.do'" />
+				<input type="button" value="리스트" onclick="location.href='${ctx}/memberList.do'"/>
 			</div>
 		</div>
 	</div>

@@ -91,15 +91,15 @@
 						<td>${vo.phone}</td>
 						
 						<c:if test="${sessionScope.userId==vo.id }">
-						<td><input type="button" value="삭제" onclick="deleteFn(${vo.num })"  ></td>
+							<td><input type="button" value="삭제" onclick="deleteFn(${vo.num })"  ></td>
 						</c:if>
 						<c:if test="${sessionScope.userId!=vo.id }">
-						<td><input type="button" value="삭제" onclick="deleteFn(${vo.num })" disabled="disabled" ></td>
+							<td><input type="button" value="삭제" onclick="deleteFn(${vo.num })" disabled="disabled" ></td>
 						</c:if>
 					</tr>
 				</c:forEach>
 				<tr>
-					<td colspan='8' align='right'><input type="button" value="회원가입" onclick="location.href='${ctx}/memberRegister.do'"/> </a></td>
+					<td colspan='8' align='right'><input type="button" value="회원가입" onclick="location.href='${ctx}/memberRegister.do'"/></td>
 				</tr>
 		    </tbody>
 		  </table>
