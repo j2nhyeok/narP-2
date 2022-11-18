@@ -14,6 +14,64 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 </head>
 <body>
+
+<div class="container">
+  <h2>회원가입화면</h2>
+  <div class="panel panel-default">
+    <div class="panel-heading">
+		<c:if test="${sessionScope.userId!=null && sessionScope.userId!=''}">
+			<label>${sessionScope.userName}님이 로그인 하셨습니다.</label>
+		</c:if>
+		<c:if test="${sessionScope.userId==null || sessionScope.userId==''}">
+			<label>안녕하세요.</label>
+		</c:if>
+	</div>
+    <div class="panel-body">
+			<form id="form1" name="form1"  class="form-horizontal" action="" method="post">
+	    <div class="form-group">
+	      <label class="control-label col-sm-2" for="id">아이디:</label>
+	      <div class="col-sm-10">
+	        <input type="text" class="form-control" id="id" name="id" placeholder="아이디를 입력하세요.">
+	      </div>
+	    </div>
+	    <div class="form-group">
+	      <label class="control-label col-sm-2" for="pass">비밃번호:</label>
+	      <div class="col-sm-10">          
+	        <input type="password" class="form-control" id="pass" name="pass" placeholder="비밀번호를 입력하세요." >
+	      </div>
+	    </div>
+	     <div class="form-group">
+	      <label class="control-label col-sm-2" for="pass">비밃번호:</label>
+	      <div class="col-sm-10">          
+	        <input type="password" class="form-control" id="pass" name="pass" placeholder="비밀번호를 입력하세요." >
+	      </div>
+	    </div>
+	     <div class="form-group">
+	      <label class="control-label col-sm-2" for="pass">비밃번호:</label>
+	      <div class="col-sm-10">          
+	        <input type="password" class="form-control" id="pass" name="pass" placeholder="비밀번호를 입력하세요." >
+	      </div>
+	    </div>
+	     <div class="form-group">
+	      <label class="control-label col-sm-2" for="pass">비밃번호:</label>
+	      <div class="col-sm-10">          
+	        <input type="password" class="form-control" id="pass" name="pass" placeholder="비밀번호를 입력하세요." >
+	      </div>
+	    </div>
+	    <div class="form-group">        
+	      <div class="col-sm-offset-2 col-sm-10">
+	        <button type="submit" class="btn btn-default">Submit</button>
+    	  </div>
+   	</div>
+  </form>
+	</div>
+    <div class="panel-footer">Panel Footer</div>
+  </div>
+</div>
+
+</body>
+</html>
+
 회원가입 화면
 <form action="${ctx}/memberInsert.do" method="post">
 <table class="table table-bordered">
